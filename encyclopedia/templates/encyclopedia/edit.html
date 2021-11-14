@@ -1,0 +1,33 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Edit article {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h1>Edit article "{{ title }}"</h1>
+    <form action="{% url 'encyclopedia:save_edit' %}" method="post">
+        {% csrf_token %}
+
+        <div class="wrapper-edit">
+            <div class="not-label">Name page:</div>
+            <div class="not-input">{{ title }}</div>
+        {% for field in form%}
+            <div class="title-edit">
+                {% if field.label != "Title" %}
+                    {{ field.label_tag }}
+                {% endif%}
+            </div>
+            <div class="tarea-edit">{{ field }}</div>
+            {% if field.errors %}
+                {% for error in field.errors %}
+                    <div class="field-error">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <div class="btn-submit">
+            <input type="submit" value="Save article" class="btn btn-primary">
+        </div>
+    </div>
+    </form>
+{% endblock %}

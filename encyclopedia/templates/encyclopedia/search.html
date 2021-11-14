@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search article "{{ req }}"
+{% endblock %}
+
+{% block body %}
+    <h1>Search article "{{ req }}"</h1>
+    <ul>
+        {% for name in name_articles %}
+            <li><a href="{% url 'encyclopedia:article' name %}">{{ name }}</a></li>
+            {% empty %}
+            <li class="nf">{{ req }} article not found...</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

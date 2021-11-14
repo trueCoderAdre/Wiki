@@ -1,0 +1,24 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    <h1>Create New article</h1>
+    <form action="{% url 'encyclopedia:createnewpage' %}" method="post">
+        {% csrf_token %}
+        <div class="wrapper-form">
+            {% for field in form %}
+                <div class="lbl">{{ field.label_tag }}</div>
+                <div class="inpt">{{ field }}</div>
+                {% if field.errors %}
+                    {% for error in field.errors %}
+                        <div class="field-error">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <div class="btn-submit "><input type="submit" value="Create New Page" class="btn btn-primary"></div>
+        </div>
+    </form>
+{% endblock %}
