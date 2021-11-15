@@ -1,2 +1,2 @@
 # Wiki
-CS50 Task 2 wiki
+CS50's Web Programming with Python and JavaScript Task 2 Wiki
