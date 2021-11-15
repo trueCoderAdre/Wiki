@@ -110,10 +110,7 @@ def save_edit(request):
 def rand(request):
     names = util.list_entries()
     name = names[random.randint(0, len(names) - 1)]
-    return render(request, 'encyclopedia/article.html', {
-        "title": name,
-        "article": markdown2.markdown(util.get_entry(name))
-    })
+    return HttpResponseRedirect(reverse('encyclopedia:article', args=[name]))
 
 
 def pageNotFound(request, exception):
