@@ -19,11 +19,9 @@
                 <h2>Wiki</h2>
                 <form action="{% url 'encyclopedia:search' %}" method="get">
                     {% csrf_token %}
-                    <div class="inpt-search">
+                    <div class="wrapper-search">
                         <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
-                    </div>
-                    <div class="btn-submit">
-                        <input type="submit" value="Go" class="btn btn-primary">
+                        <input class="btn-submit" type="image" src="{% static 'encyclopedia/img/search.svg' %}" alt="Search">
                     </div>
                 </form>
                 <div>
