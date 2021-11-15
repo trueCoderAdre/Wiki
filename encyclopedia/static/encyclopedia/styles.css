@@ -33,6 +33,11 @@ textarea {
     grid-row: 1/2;
     grid-column: 2/3;
     background-color: rgb(0, 123, 255);
+    transition: background-color .5s;
+}
+
+.btn-submit:hover{
+    background-color: rgb(0, 98, 202);
 }
 
 .search {
