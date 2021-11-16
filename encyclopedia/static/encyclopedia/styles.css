@@ -115,6 +115,12 @@ form > .wrapper-form > .inpt > textarea{
     margin-bottom: 15px;
 }
 
+.btn-submit-create,
+.btn-submit-edit{
+    display: grid;
+    justify-content: right;
+}
+
 @media (max-width: 767px){
     .sidebar{
         height: 300px;
